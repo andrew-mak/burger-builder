@@ -4,6 +4,7 @@ import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Button from '../../UI/Button/Button';
 
 const orderSummary = (props) => {
+
   const ingredientSummary = Object.keys(props.ingredients)
     .map(igKey => {
       return (
@@ -12,6 +13,7 @@ const orderSummary = (props) => {
         </li>
       )
     });
+
   return (
     <Aux>
       <h3>Your Order</h3>
@@ -26,8 +28,7 @@ const orderSummary = (props) => {
       <Button btnType='Success'
         clicked={props.purchaseContinued}>CONTINUE</Button>
     </Aux>
-  )
-
+  );
 }
 
 export default orderSummary;
