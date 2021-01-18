@@ -1,14 +1,8 @@
 import * as actionTypes from '../actions/actionTypes';
 
-const INGREDIENT_PRICES = {
-  salad: 1.0,
-  cheese: 1.2,
-  bacon: 1.4,
-  meat: 1.5,
-}
-
 const initState = {
   ingredients: null,
+  ingredientPrices: null,
   totalPrice: 0,
   error: false
 };
@@ -20,7 +14,7 @@ const addIngredient = (state, actions) => {
       ...state.ingredients,
       [actions.ingredientName]: state.ingredients[actions.ingredientName] + 1
     },
-    totalPrice: state.totalPrice + INGREDIENT_PRICES[actions.ingredientName]
+    totalPrice: state.totalPrice + state.ingredientPrices[actions.ingredientName]
   };
 }
 const removeEngredient = (state, actions) => {
@@ -34,7 +28,7 @@ const removeEngredient = (state, actions) => {
       ...state.ingredients,
       [actions.ingredientName]: state.ingredients[actions.ingredientName] - 1
     },
-    totalPrice: state.totalPrice - INGREDIENT_PRICES[actions.ingredientName]
+    totalPrice: state.totalPrice - state.ingredientPrices[actions.ingredientName]
   };
 }
 const setInitData = (state, actions) => {
@@ -46,6 +40,7 @@ const setInitData = (state, actions) => {
       cheese: actions.init.ingredients.cheese,
       meat: actions.init.ingredients.meat,
     },
+    ingredientPrices: {...actions.init.ingredient_prices},
     totalPrice: actions.init.price,
     error: false
   }

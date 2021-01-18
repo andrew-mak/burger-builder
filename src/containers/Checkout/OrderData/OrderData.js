@@ -110,10 +110,13 @@ class ContactData extends Component {
     for (let formElemId in this.state.orderForm) {
       formData[formElemId] = this.state.orderForm[formElemId].value;
     }
+    const currentDate = new Date();
     const order = {
       ingredients: this.props.ingredients,
       price: this.props.price,
-      orderData: formData
+      orderData: formData,
+      date: currentDate.toDateString(),
+      time: currentDate.toLocaleTimeString()
     }
     this.props.onPurchaseOrder(order);
   }

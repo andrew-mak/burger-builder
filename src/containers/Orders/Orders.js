@@ -22,6 +22,9 @@ class Orders extends Component {
               key={order.id}
               ingredients={order.ingredients}
               price={order.price}
+              time={order.time}
+              date={order.date}
+              orderData={order.orderData}
             />
           ))}
         </React.Fragment>

@@ -15,17 +15,20 @@ const order = (props) => {
 
   const ingredientOutput = ingredients.map(ig => {
     return <span
-      key={ig.name} style={{
-        textTransform: 'capitalize', display: 'inline-block', margin: '0 8px', border: '1px solid #ccc'
-      }}>
+      key={ig.name} className={classes.Ingredient}>
       {ig.name}: {ig.amount}
     </span>;
   });
 
   return (
-    <div className={classes.Order}>
-      <p>Ingredients: {ingredientOutput}</p>
-      <p>Price: <strong>USD {props.price}</strong></p>
+    <div className={classes.OrderContainer}>
+      <div className={classes.OrderInfo}>
+        <div>{props.date} {props.time}</div>
+        <div><strong><i>Phone:</i></strong> {props.orderData.tel}</div>
+        <div><strong><i>Delivery:</i></strong> {props.orderData.city} {props.orderData.address}</div>
+        <div className={classes.Price}>Check: <strong>{props.price} $</strong></div>
+      </div>
+      <div className={classes.Ingredients}><p>Ingredients:</p>{ingredientOutput}</div>
     </div>
   );
 }

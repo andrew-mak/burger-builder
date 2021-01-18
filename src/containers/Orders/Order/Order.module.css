@@ -1,8 +1,70 @@
-.Order {
+.OrderContainer {
+  display: flex;
   width: 80%;
   border: 1px solid #ccc;
   box-shadow: 0 2px 3px rgb(170, 170, 170);
   padding: 10px;
   margin: 10px auto;
   box-sizing: border-box;
+}
+
+.OrderInfo {
+  width: 75%;
+  position: relative;
+}
+
+.OrderInfo div {
+  padding: 4px 0;
+}
+
+.Price {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+}
+
+.Ingredients {
+  width: 25%;
+  border-left: 1px solid #ccc;
+  padding-left: 8px;
+}
+
+.Ingredients p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.Ingredient {
+  text-transform: capitalize;
+  margin: 0 8px;
+  display: block;
+}
+
+@media (max-width: 550px) {
+  .OrderContainer {
+    display: block;
+    width: 98%;
+  }
+
+  .OrderInfo,
+  .Ingredients {
+    width: 100%;
+  }
+
+  .Ingredients {
+    border-top: 1px solid #ccc;
+    border-left: none ;
+  }
+
+  .Ingredient {
+    display: inline-block;
+  }
+
+  .Ingredients p {
+    text-align: initial;
+  }
+
+  .Price {
+    position: initial;
+  }
 }
