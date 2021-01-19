@@ -10,10 +10,12 @@ const input = (props) => {
   switch (props.elementType) {
     case ('input'):
       inputElement = <input
+        vali
         onChange={props.changed}
         className={inputClasses.join(' ')}
         {...props.elementConfig}
-        value={props.value} />;
+        value={props.value}
+      />;
       break;
     case ('textarea'):
       inputElement = <textarea
