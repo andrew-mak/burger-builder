@@ -23,7 +23,7 @@ const order = (props) => {
   return (
     <div className={classes.OrderContainer}>
       <div className={classes.OrderInfo}>
-        <div>{props.date} {props.time}</div>
+        <div>{new Date(props.isoDate).toLocaleString()}</div>
         <div><strong><i>Phone:</i></strong> {props.orderData.tel}</div>
         <div><strong><i>Delivery:</i></strong> {props.orderData.city} {props.orderData.address}</div>
         <div className={classes.Price}>Check: <strong>{props.price} $</strong></div>

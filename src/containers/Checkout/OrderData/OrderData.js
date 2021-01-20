@@ -109,13 +109,12 @@ class ContactData extends Component {
     for (let formElemId in this.state.orderForm) {
       formData[formElemId] = this.state.orderForm[formElemId].value;
     }
-    const currentDate = new Date();
     const order = {
+      userId: this.props.userId,
       ingredients: this.props.ingredients,
       price: this.props.price,
       orderData: formData,
-      date: currentDate.toDateString(),
-      time: currentDate.toLocaleTimeString()
+      isoDate: new Date().toISOString(),
     }
     this.props.onPurchaseOrder(order, this.props.token);
   }
@@ -219,6 +218,7 @@ const mapStateToProps = (state) => {
     price: state.burgerBuilder.totalPrice,
     loading: state.order.loading,
     token: state.auth.token,
+    userId: state.auth.userId,
   }
 }
 

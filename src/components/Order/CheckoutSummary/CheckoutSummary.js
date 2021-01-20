@@ -7,8 +7,9 @@ const checkoutSummary = (props) => {
   return (
     <div className={classes.checkoutSummary}>
       <h1>We hope you would like it!</h1>
-      <div style={{ width: '100%', margin: 'auto' }}>
+      <div className={classes.BurgerContainer}>
         <Burger ingredients={props.ingredients} />
+        <div className={classes.Price}>$ {props.price.toFixed(2).replace('-0', '0')}</div>
       </div>
       <Button
         clicked={props.checkoutCanceled}

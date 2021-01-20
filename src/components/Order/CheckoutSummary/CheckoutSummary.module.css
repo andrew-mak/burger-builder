@@ -4,8 +4,17 @@
   margin: auto;
 }
 
+.BurgerContainer {
+  width: "100%";
+  margin: "auto";
+}
+
+.Price {
+  font-size: 2.4rem;
+}
+
 @media (min-width: 600px) {
-  .checkoutSummary {
-    width: 500px;
+  .Price {
+    font-size: 2rem;
   }
 }
