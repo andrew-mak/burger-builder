@@ -8,12 +8,6 @@
   box-sizing: border-box;
 }
 
-.FormMessage {
-  position: absolute;
-  margin-left: 12px;
-  color: rgb(221, 0, 0);
-}
-
 .AuthError {
   color: rgb(221, 0, 0);
 }

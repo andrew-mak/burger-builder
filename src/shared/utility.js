@@ -6,6 +6,7 @@ export const updateObject = (oldObject, updatedProperties) => {
 };
 
 export const checkValidity = (value, rules) => {
+
   let isValid = true;
   if (!rules) {
     return true;
@@ -31,20 +32,6 @@ export const checkValidity = (value, rules) => {
   if (rules.isNumeric) {
     const pattern = /^\d+$/;
     isValid = pattern.test(value) && isValid
-  }
-
-  if (rules.confirm) {
-    let confirmed = false;
-    if (this.state.controls.password.value) {
-
-      confirmed = this.state.controls.password.value === value;
-      let formMessage = '';
-      if (!confirmed) {
-        formMessage = "Passwords don't match";
-      }
-      this.setState({ formMessage: formMessage });
-    }
-    isValid = confirmed && isValid;
   }
 
   return isValid;
