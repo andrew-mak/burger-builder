@@ -1,8 +1,11 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import OrderData from './OrderData/OrderData';
+import Button from '../../components/UI/Button/Button';
+import classes from './Checkout.module.css';
+
 
 
 const Checkout = props => {
@@ -24,8 +27,15 @@ const Checkout = props => {
           ingredients={props.ingredients}
           price={props.price} />
         <Route path={props.match.path + "/order-data"} component={OrderData} />
-      </div> :
-      <Redirect to="/" />
+      </div> : <div className={classes.successfulOrder}>
+        <h2>Thanks for your order!</h2>
+        <ul>
+          <li>Your order has been successfully accepted.</li>
+          <li>You can check it in your orders history.</li>
+          <li>The delivery service will contact you.</li>
+        </ul>
+        <Button btnType="Success" clicked={() => props.history.push('/')} >OK</Button>
+      </div>
   );
 };
 

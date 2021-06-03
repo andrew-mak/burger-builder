@@ -1,0 +1,28 @@
+.successfulOrder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.successfulOrder ul {
+  list-style: none;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 600px) {
+  .successfulOrder {
+    width: 500px;
+  }
+
+  .successfulOrder ul {
+    line-height: 2.2;
+  }
+}
+
