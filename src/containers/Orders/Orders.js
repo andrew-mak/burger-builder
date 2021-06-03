@@ -15,17 +15,17 @@ const Orders = props => {
 
   return (
     props.loading ? <Spinner /> :
-      <React.Fragment>
+      <>
         {props.orders.map(order => (
           <Order
             key={order.id}
             ingredients={order.ingredients}
-            price={order.price}
+            price={order.price.toFixed(2).replace('-0', '0')}
             isoDate={order.isoDate}
             orderData={order.orderData}
           />
         ))}
-      </React.Fragment>
+      </>
   );
 }
 

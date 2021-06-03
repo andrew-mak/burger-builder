@@ -73,7 +73,7 @@ const BurgerBuilder = props => {
   if (ingredients) {
 
     burger = (
-      <React.Fragment>
+      <>
         <Burger
           ingredients={ingredients} />
         <BuildControls
@@ -85,7 +85,7 @@ const BurgerBuilder = props => {
           purchasable={updatePurchaseState()}
           ordered={purchaseHandler}
         />
-      </React.Fragment>);
+      </>);
 
     orderSummary = <OrderSummary
       ingredients={ingredients}
@@ -96,14 +96,14 @@ const BurgerBuilder = props => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Modal
         show={orderReady}
         modalClosed={purchaseCancelHandler}>
         {orderSummary}
       </Modal>
       {burger}
-    </React.Fragment>
+    </>
   );
 };
 

@@ -7,14 +7,14 @@ const withErrorHandler = (WrappedComponent, axios) => {
   return props => {
     const [errorState, errorConfirmedHandler] = useHttpErrorHandler(axios);
     return (
-      <React.Fragment>
+      <>
         <Modal
           show={errorState}
           modalClosed={errorConfirmedHandler}>
           {errorState && errorState.message}
         </Modal>
         <WrappedComponent {...props} />
-      </React.Fragment>
+      </>
     );
   }
 };

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import axios from '../../../axios-orders';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
@@ -12,6 +12,7 @@ import classes from './OrderData.module.css';
 
 const ContactData = props => {
   const { onPurchaseOrder, price, ingredients, userId, token } = props;
+  const formRef = useRef()
 
   const [orderFormState, setOrderFormState] = useState({
     name: {
@@ -104,6 +105,8 @@ const ContactData = props => {
   });
   const [orderFormValidity, setorderFormValidity] = useState(false);
 
+  useEffect(() => { formRef.current.scrollIntoView({ behavior: 'smooth' }) }, []);
+
   const orderHandler = useCallback(event => {
     event.preventDefault();
     const formData = {};
@@ -152,7 +155,7 @@ const ContactData = props => {
   let form = <Spinner />;
   if (!props.loading) {
     form = (
-      <form onSubmit={orderHandler}>
+      <form onSubmit={orderHandler} ref={formRef}>
         {formElementsArray.map(element => (
           <Input
             key={element.id}
