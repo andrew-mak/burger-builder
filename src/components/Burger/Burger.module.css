@@ -8,25 +8,21 @@
   font-size: 1.2rem;
 }
 
-/* TODO: add more 1-2 @media, screen sizes determ after testing in mobile or browser  */
-
-@media (min-width: 500px) and (min-height: 400px) {
+@media (min-width: 400px) and (min-height: 400px) {
   .Burger {
-    width: 350px;
-    height: 300px;
-  }
-}
-
-@media (min-width: 500px) and (min-height: 401px) {
-  .Burger {
-    width: 450px;
+    width: 90%;
     height: 400px;
   }
 }
 
-@media (min-width: 1000px) and (min-height: 700px) {
+@media (min-width: 768px) {
+  .Burger {
+    width: 620px;
+  }
+}
+
+@media (min-width: 992px) {
   .Burger {
     width: 700px;
-    height: 600px;
   }
 }
