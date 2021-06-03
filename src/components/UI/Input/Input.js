@@ -10,7 +10,6 @@ const input = (props) => {
   switch (props.elementType) {
     case ('input'):
       inputElement = <input
-        vali
         onChange={props.changed}
         className={inputClasses.join(' ')}
         {...props.elementConfig}
